@@ -12,9 +12,38 @@ Also it includes the big submenu.
     {{/foreach}}
   </ul>
 {{else}}
-  {{#foreach navigation}}
+  {{!-- {{#foreach navigation}}
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
       <a href="{{url absolute="true"}}">{{label}}</a>
+      
     </li>
-  {{/foreach}}
+  {{/foreach}} --}}
+  <li class="nav-mundo-henry {{#if navigation.0.current}} nav-current{{/if}}">
+    <a href="/tag/mundo-henry">Mundo Henry</a>
+    <ul class="dropdown-content">
+      <li class="sub-list"><a href="/tag/descubre-henry">Descubre Henry</a></li>
+      <li class="sub-list"><a href="/tag/trabajar-en-henry">Trabajar en Henry</a></li>
+      <li class="sub-list"><a href="/tag/beneficios">Beneficios</a></li>
+      <li class="sub-list"><a href="/tag/opiniones">Opiniones</a></li>
+      <li class="sub-list"><a href="/tag/admisiones">Admisiones</a></li>
+    </ul>
+  </li>
+  <li class="nav-mundo-henry {{#if navigation.1.current}} nav-current{{/if}}">
+    <a href="/tag/desarrollo-web">Desarrollo Web</a>
+    <ul class="dropdown-content">
+      <li class="sub-list"><a href="/tag/desarrollo-web-full-srack">Desarrollo Web Full Stack</a></li>
+      <li class="sub-list"><a href="/tag/diccionario-dev">Diccionario Dev</a></li>
+      <li class="sub-list"><a href="/tag/como-hacer">Cómo hacer</a></li>
+      <li class="sub-list"><a href="/tag/vida-de-dev">Vida de Dev</a></li>
+    </ul>
+  </li>
+  <li class="nav-mundo-henry {{#if navigation.2.current}} nav-current{{/if}}">
+    <a href="/tag/novedades">Novedades</a> 
+  </li>
+  <li class="nav-mundo-henry {{#if navigation.3.current}} nav-current{{/if}}">
+    <a href="/tag/mujeres-en-tecnologia">Mujeres en Tecnología</a> 
+  </li>
+  <li class="nav-mundo-henry {{#if navigation.4.current}} nav-current{{/if}}">
+    <a href="/tag/trabajar-en-tecnologia/">Trabajar en Tecnología</a> 
+  </li>
 {{/if}}
