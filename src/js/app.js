@@ -99,29 +99,6 @@ $(() => {
   };
 
   const getAllPosts = (host, key) => {
-    const hrefURL = window.location.href;
-    const popup = document.querySelector(".popup-wrapper");
-    const close = document.querySelector(".popup-close");
-    if (hrefURL === `${ghostHost}/`) {
-      setTimeout(() => {
-        popup.style.display = "flex";
-      }, 22000);
-    }
-    window.addEventListener("keyup", (e) => {
-      const codigo = e.keyCode || e.which;
-      if (codigo == 27) {
-        popup.style.display = "none";
-      }
-    });
-    close.addEventListener("click", () => {
-      popup.style.display = "none";
-    });
-    popup.addEventListener("click", (e) => {
-      if (e.target.className === "popup-wrapper") {
-        popup.style.display = "none";
-      }
-    });
-
     const api = new GhostContentAPI({
       url: host,
       key,
@@ -153,6 +130,29 @@ $(() => {
       .catch((err) => {
         console.log(err);
       });
+
+    const hrefURL = window.location.href;
+    const popup = document.querySelector(".popup-wrapper");
+    const close = document.querySelector(".popup-close");
+    if (hrefURL === `${ghostHost}/`) {
+      setTimeout(() => {
+        popup.style.display = "flex";
+      }, 22000);
+    }
+    window.addEventListener("keyup", (e) => {
+      const codigo = e.keyCode || e.which;
+      if (codigo == 27) {
+        popup.style.display = "none";
+      }
+    });
+    close.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+    popup.addEventListener("click", (e) => {
+      if (e.target.className === "popup-wrapper") {
+        popup.style.display = "none";
+      }
+    });
   };
 
   const showNotification = (typeNotification) => {

@@ -37,7 +37,7 @@
 
   &.toggle-overflow {
     @include respond-to("medium") {
-      overflow-x: hidden;
+      // overflow-x: hidden;
     }
   }
 
