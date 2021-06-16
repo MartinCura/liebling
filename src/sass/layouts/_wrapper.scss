@@ -69,3 +69,17 @@
     padding-top: 80px;
   }
 }
+
+#m-tag-primary {
+  display: none;
+}
+
+#m-tag-secondary {
+  display: none;
+  min-height: 190px;
+  padding: 148px 0px 0px;
+  .m-hero-title {
+    font-size: 2.25rem;
+    color: var(--link-color);
+  }
+}
