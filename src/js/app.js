@@ -82,6 +82,7 @@ $(() => {
     if (subTags.includes(selectTag)) {
       document.getElementById("m-tag-primary").style.display = "none";
       document.getElementById("m-tag-secondary").style.display = "block";
+      document.getElementById("tag-content").style.paddingTop = "22px";
     } else {
       document.getElementById("m-tag-primary").style.display = "block";
       document.getElementById("m-tag-secondary").style.display = "none";
