@@ -25,23 +25,28 @@ into the {body} of the default.hbs template --}}
   {{!-- Everything inside the #tag tags pulls data from the tag --}}
   {{#tag}}
     {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
-      <h1 class="m-hero-title bigger">{{name}}</h1>
-      {{#if description}}
-        <p class="m-hero-description">
-          {{description}}
-        </p>
-      {{/if}}
-      <div class="m-hero__meta">
-        {{!-- <ul class="m-hero-stats">
-          <li>
-            {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}} {{t "with this tag"}}
-          </li>
-        </ul> --}}
+    <div id="m-tag-primary">
+      {{> hero background=feature_image}}
+      <div class="m-hero__content" data-aos="fade-down">
+        <h1 id="title-tag-name" class="m-hero-title bigger">{{name}}</h1>
+        {{#if description}}
+          <p class="m-hero-description">
+            {{description}}
+          </p>
+        {{/if}}
+        <div class="m-hero__meta">
+          {{!-- <ul class="m-hero-stats">
+            <li>
+              {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}} {{t "with this tag"}}
+            </li>
+          </ul> --}}
+        </div>
       </div>
+      </section>
     </div>
-    </section>
+    <div id="m-tag-secondary" class="l-wrapper">
+      <h1 id="title-tag-name tag-secondary" class="m-hero-title bigger">{{name}}</h1>
+    </div>
   {{/tag}}
   
   <div class="l-content">

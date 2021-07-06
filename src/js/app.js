@@ -66,6 +66,28 @@ $(() => {
     aplica.style.fontWeight = "600";
   }, 10000);
 
+  const formatSubCategory = () => {
+    const subTags = [
+      "Descubre Henry",
+      "Trabajar en Henry",
+      "Beneficios",
+      "Opiniones",
+      "Admisiones",
+      "Desarrollo Web Full Stack",
+      "Diccionario Dev",
+      "Cómo hacer",
+      "Vida de Dev",
+    ];
+    const selectTag = document.getElementById("title-tag-name").innerText;
+    if (subTags.includes(selectTag)) {
+      document.getElementById("m-tag-primary").style.display = "none";
+      document.getElementById("m-tag-secondary").style.display = "block";
+    } else {
+      document.getElementById("m-tag-primary").style.display = "block";
+      document.getElementById("m-tag-secondary").style.display = "none";
+    }
+  };
+
   const showSubmenu = () => {
     $header.addClass("submenu-is-active");
     $toggleSubmenu.addClass("active");
@@ -429,6 +451,7 @@ $(() => {
   shave(".js-article-card-title", 100);
   shave(".js-article-card-title-no-image", 250);
 
+  formatSubCategory();
   checkForActionParameter();
   tryToRemoveNewsletter();
   trySearchFeature();
