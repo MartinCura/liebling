@@ -452,8 +452,8 @@ $(() => {
   shave(".js-article-card-title", 100);
   shave(".js-article-card-title-no-image", 250);
 
-  formatSubCategory();
   checkForActionParameter();
   tryToRemoveNewsletter();
   trySearchFeature();
+  formatSubCategory();
 });
