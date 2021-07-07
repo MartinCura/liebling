@@ -324,9 +324,9 @@ $(() => {
     toggleDesktopTopbarOverflow(true);
   });
 
-  $toggleDarkMode.on("mouseleave", () => {
-    toggleDesktopTopbarOverflow(true);
-  });
+  $toggleDarkMode.on('mouseleave', () => {
+    toggleDesktopTopbarOverflow(false)
+  })
 
   $closeNotification.on("click", function() {
     closeNotification($(this).parent());
@@ -341,9 +341,9 @@ $(() => {
     }
   });
 
-  $(document).on("keyup", (e) => {
-    if (e.key === "Escape" && $search.hasClass("opened")) {
-      $closeSearch.click();
+  $(document).on('keyup', (e) => {
+    if (e.key === 'Escape' && $search.hasClass('opened')) {
+      $closeSearch.trigger('click')
     }
   });
 
@@ -452,8 +452,8 @@ $(() => {
   shave(".js-article-card-title", 100);
   shave(".js-article-card-title-no-image", 250);
 
-  formatSubCategory();
   checkForActionParameter();
   tryToRemoveNewsletter();
   trySearchFeature();
+  formatSubCategory();
 });
