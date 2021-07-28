@@ -11,7 +11,7 @@ You need to enable the members feature first.
         <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
         <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
           oninvalid="this.setCustomValidity('Por favor, complete este campo')"
-          oninput="this.setCustomValidity('Ingrese su dirección de correo electrónico')" placeholder="{{t "Your email address"}}" required />
+          oninput="this.setCustomValidity('')" placeholder="{{t "Your email address"}}" required />
       </div>
       <button id="newsletter-button" class="m-button primary block" style="color:yellow;background-color:black;" type="submit">{{t "Subscribe"}}</button>
     </div>
