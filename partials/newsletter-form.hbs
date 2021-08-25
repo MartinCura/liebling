@@ -10,7 +10,8 @@ You need to enable the members feature first.
       <div class="pos-relative">
         <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
         <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
-          placeholder="{{t "Your email address"}}" required />
+          oninvalid="InvalidMsg(this);" title="Ingrese su email"
+          oninput="InvalidMsg(this);" placeholder="{{t "Your email address"}}" required />
       </div>
       <button id="newsletter-button" class="m-button primary block" style="color:yellow;background-color:black;" type="submit">{{t "Subscribe"}}</button>
     </div>
@@ -30,3 +31,16 @@ You need to enable the members feature first.
     </p>
   </form>
 </div>
+
+<script>
+  function InvalidMsg (value) {
+    if (value.value == '') {
+      value.setCustomValidity('Email requerido');
+    } else if (value.validity.typeMismatch) {
+      value.setCustomValidity('Por favor ingrese un email válido');
+    } else {
+      value.setCustomValidity('');
+    }
+    return true;
+  };
+</script>
