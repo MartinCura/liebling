@@ -134,9 +134,11 @@ $(() => {
     const hrefURL = window.location.href;
     const popup = document.querySelector('.popup-wrapper');
     const close = document.querySelector('.popup-close');
-    if (hrefURL === `${ghostHost}/`) {
+    const lsNewsletter = localStorage.getItem('newsletter');
+    if (hrefURL === `${ghostHost}/` && !lsNewsletter) {
       setTimeout(() => {
         popup.style.display = 'flex';
+        localStorage.setItem('newsletter', 'ok');
       }, 22000);
     }
     window.addEventListener('keyup', e => {
