@@ -47,6 +47,8 @@ $(() => {
   const $newsletterElements = $('.js-newsletter');
   const currentSavedTheme = localStorage.getItem('theme');
 
+  const NEWSLETTER_POPUP_SHOW = 'newsletter_popup_shown';
+
   let fuse = null;
   let submenuIsOpen = false;
   let secondaryMenuTippy = null;
@@ -134,9 +136,11 @@ $(() => {
     const hrefURL = window.location.href;
     const popup = document.querySelector('.popup-wrapper');
     const close = document.querySelector('.popup-close');
-    if (hrefURL === `${ghostHost}/`) {
+    const lsNewsletter = localStorage.getItem(NEWSLETTER_POPUP_SHOW);
+    if (hrefURL === `${ghostHost}/` && !lsNewsletter) {
       setTimeout(() => {
         popup.style.display = 'flex';
+        localStorage.setItem(NEWSLETTER_POPUP_SHOW, 'ok');
       }, 22000);
     }
     window.addEventListener('keyup', e => {
